@@ -57,7 +57,7 @@ function App() {
     // Efter klik på læse mere knap, prøv at hente data for specifik
     // event i firebase.
     try {
-      const response = await fetch(`https://events2-95c96-default-rtdb.europe-west1.firebasedatabase.app/${id}.json`);
+      const response = await fetch(`https://events2-95c96-default-rtdb.europe-west1.firebasedatabase.app/events/${id}.json`);
 
       // Hvis success med firebase, opdater titel og beskrivelse variable.
       if (response.ok) {
