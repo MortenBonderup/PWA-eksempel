@@ -81,7 +81,7 @@ export default function Forside() {
         <>
             <Heartbeat />
 
-            <p><Link to="/opret">Opret event</Link>&nbsp;&nbsp;&nbsp;<Link to="/login">Login</Link>&nbsp;&nbsp;&nbsp;<Link to="/logout">Logout</Link></p>
+            <p><Link to="/opret">Opret event</Link>&nbsp;&nbsp;&nbsp;<Link to="/login">Login</Link>&nbsp;&nbsp;&nbsp;<Link to="/logout">Logout</Link>&nbsp;&nbsp;&nbsp;<Link to="/registrer">Registrer bruger</Link></p>
             <section>
                 {events.map(event => (
                     <Event key={event.id} event={event} AabnDialog={AabnDialog} />

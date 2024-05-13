@@ -5,6 +5,7 @@ import OpdaterEventSide from './pages/OpdaterEventSide'
 import OpretEventSide from './pages/OpretEventSide'
 import LoginSide from './pages/LoginSide'
 import LogoutSide from './pages/LogoutSide'
+import OpretBrugerSide from './pages/OpretBrugerSide'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path="/login" element={<LoginSide />} />
       <Route path="/logout" element={<LogoutSide />} />
       <Route path="/opret" element={<OpretEventSide />} />
+      <Route path="/registrer" element={<OpretBrugerSide />} />
       <Route path="/opdater/:eventId" element={<OpdaterEventSide />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
