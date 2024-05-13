@@ -12,13 +12,13 @@ export default function LoginSide() {
     const navigate = useNavigate();
 
     async function haandterLogin(e) {
-        e.preventDefault();
+        e.preventDefault(); // Forhindrer normal genindlæsning af side efter formular submit/afsendelse
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log(userCredential);
             navigate("/");
         } catch (error) {
-            toast.error("Dit login-forsøg mislykkedes! ")
+            toast.error("Dit login-forsøg mislykkedes!")
         }
     }
 

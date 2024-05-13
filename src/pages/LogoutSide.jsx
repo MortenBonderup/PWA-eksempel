@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function LogoutSide() {
 
+    // Tvungen logout fra Firebase
     useEffect(() => {
         signOut(auth)
     }, [])

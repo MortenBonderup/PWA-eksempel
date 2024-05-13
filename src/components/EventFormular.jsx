@@ -30,7 +30,16 @@ export default function EventFormular({ savePost, post }) {
         }
 
         savePost(formData);
+        rydFormular();
+    }
 
+    // Nulstiller formular, så den er klar til 
+    // ny oprettelse af event.
+    function rydFormular() {
+        setTitel("");
+        setTidspunkt("");
+        setSted("");
+        setBeskrivelse("");
     }
 
     return (
@@ -51,6 +60,7 @@ export default function EventFormular({ savePost, post }) {
 
             <p className="text-error">{errorMessage}</p>
             <button type="submit">Gem event</button>
+            <button type="button" onClick={rydFormular}>Ryd formular...</button>
         </form>
     );
 

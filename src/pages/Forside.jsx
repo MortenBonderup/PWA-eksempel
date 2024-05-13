@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import Heartbeat from '../components/Heartbeat'
 import Event from '../components/Event';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 export default function Forside() {
     const [events, setEvents] = useState([]);
@@ -80,8 +81,8 @@ export default function Forside() {
     return (
         <>
             <Heartbeat />
+            <p><NavLink to="/opret" className="active">Opret event</NavLink>&nbsp;&nbsp;&nbsp;<NavLink to="/login" className="active">Login</NavLink>&nbsp;&nbsp;&nbsp;<NavLink to="/logout" className="active">Logout</NavLink>&nbsp;&nbsp;&nbsp;<NavLink to="/registrer" className="active">Registrer bruger</NavLink></p>
 
-            <p><Link to="/opret">Opret event</Link>&nbsp;&nbsp;&nbsp;<Link to="/login">Login</Link>&nbsp;&nbsp;&nbsp;<Link to="/logout">Logout</Link>&nbsp;&nbsp;&nbsp;<Link to="/registrer">Registrer bruger</Link></p>
             <section>
                 {events.map(event => (
                     <Event key={event.id} event={event} AabnDialog={AabnDialog} />

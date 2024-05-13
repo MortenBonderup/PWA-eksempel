@@ -14,6 +14,8 @@ export default function OpdaterEventSide() {
 
     const url = `https://events2-95c96-default-rtdb.europe-west1.firebasedatabase.app/events/${params.eventId}.json`;
 
+    // Henter oplysninger for det udvalgte event og 
+    // gemmer oplysningerne i "event" variablen.
     useEffect(() => {
         async function getEvent() {
             try {
@@ -27,11 +29,15 @@ export default function OpdaterEventSide() {
         getEvent();
     }, [url]);
 
+    // Kontrollerer om brugeren er logget på. Hvis ikke sendes 
+    // brugeren til login-siden.
     useEffect(() => {
         if (loading) return;
         if (!user) return navigate("/login");
     }, [user, loading, navigate]);
 
+    // Gemmer det opdaterede event med de ny-indtastede
+    // oplysninger i Firebase.
     async function gemEvent(opdateretEvent) {
         try {
             const response = await fetch(url, {
@@ -46,6 +52,8 @@ export default function OpdaterEventSide() {
         }
     }
 
+    // Sletter det specifikke event efter at brugeren har bekræftet, at det
+    // er det som skal ske.
     async function sletEvent() {
         const bekraeftSlet = window.confirm(`Vil du slette dette event "${event.titel}"?`)
 

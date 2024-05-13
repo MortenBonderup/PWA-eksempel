@@ -10,15 +10,17 @@ import OpretBrugerSide from './pages/OpretBrugerSide'
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Forside />} />
-      <Route path="/login" element={<LoginSide />} />
-      <Route path="/logout" element={<LogoutSide />} />
-      <Route path="/opret" element={<OpretEventSide />} />
-      <Route path="/registrer" element={<OpretBrugerSide />} />
-      <Route path="/opdater/:eventId" element={<OpdaterEventSide />} />
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Forside />} />
+        <Route path="/login" element={<LoginSide />} />
+        <Route path="/logout" element={<LogoutSide />} />
+        <Route path="/opret" element={<OpretEventSide />} />
+        <Route path="/registrer" element={<OpretBrugerSide />} />
+        <Route path="/opdater/:eventId" element={<OpdaterEventSide />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
   )
 }
 

@@ -10,6 +10,9 @@ export default function OpretEventSide() {
     const navigate = useNavigate();
     const [user, loading] = useAuthState(auth);
 
+    // Gemmer et ny-oprettet event. Hvis det går godt,
+    // så dirigeres brugeren til forside, ellers toast-besked
+    // med fejlmeddelelse.
     async function OpretEvent(nytevent) {
         const url = "https://events2-95c96-default-rtdb.europe-west1.firebasedatabase.app/events.json";
 
@@ -20,12 +23,15 @@ export default function OpretEventSide() {
             });
             const data = await response.json();
             console.log(data);
-            navigate("/");
+            // navigate("/");
+            toast.success("Dit event blev oprettet.")
         } catch {
             toast.error("Dit forsøg på at oprette et event mislykkedes. Prøv igen senere.")
         }
     }
 
+    // Tjekker om bruger er logget ind, hvis ikke brugeren er 
+    // logget ind, så dirigeres brugeren til login-siden.
     useEffect(() => {
         if (loading) return;
         if (!user) return navigate("/login");
