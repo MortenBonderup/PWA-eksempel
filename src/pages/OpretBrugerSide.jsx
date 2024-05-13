@@ -19,7 +19,11 @@ export default function OpretBrugerSide() {
             navigate("/");
         } catch (error) {
             // Handle error (e.g., display an error message)
-            toast.error("Din oprettelse slog fejl, makker!");
+            if (error.message.indexOf("email-already-in-use") > -1) {
+                toast.error("Du er allerede oprettet!");
+            } else {
+                toast.error("Din oprettelse slog fejl, makker!");
+            }
             console.error('Error creating user:', error.message);
         }
     };
